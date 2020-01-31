@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>Form1.h</itemPath>
+      <itemPath>TApplication.h</itemPath>
+      <itemPath>TForm.h</itemPath>
+      <itemPath>TObject.h</itemPath>
+      <itemPath>bcl.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>Form1.cpp</itemPath>
+      <itemPath>TApplication.cpp</itemPath>
+      <itemPath>TForm.cpp</itemPath>
+      <itemPath>TObject.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>builder.gui</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/gtkmm-3.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/gtkmm-3.0/include</pElem>
+            <pElem>/usr/include/atkmm-1.6</pElem>
+            <pElem>/usr/include/gtk-3.0/unix-print</pElem>
+            <pElem>/usr/include/gdkmm-3.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/gdkmm-3.0/include</pElem>
+            <pElem>/usr/include/giomm-2.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/giomm-2.4/include</pElem>
+            <pElem>/usr/include/pangomm-1.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/pangomm-1.4/include</pElem>
+            <pElem>/usr/include/glibmm-2.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glibmm-2.4/include</pElem>
+            <pElem>/usr/include/gtk-3.0</pElem>
+            <pElem>/usr/include/at-spi2-atk/2.0</pElem>
+            <pElem>/usr/include/at-spi-2.0</pElem>
+            <pElem>/usr/include/dbus-1.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/dbus-1.0/include</pElem>
+            <pElem>/usr/include/gtk-3.0</pElem>
+            <pElem>/usr/include/gio-unix-2.0/</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/pango-1.0</pElem>
+            <pElem>/usr/include/harfbuzz</pElem>
+            <pElem>/usr/include/pango-1.0</pElem>
+            <pElem>/usr/include/atk-1.0</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/cairomm-1.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/cairomm-1.0/include</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng16</pElem>
+            <pElem>/usr/include/sigc++-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/sigc++-2.0/include</pElem>
+            <pElem>/usr/include/gdk-pixbuf-2.0</pElem>
+            <pElem>/usr/include/libpng16</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>$$(pkg-config --libs gtkmm-3.0)</commandLine>
+        </ccTool>
+      </compileType>
+      <item path="Form1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Form1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TApplication.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TApplication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TForm.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bcl.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="builder.gui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="Form1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Form1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TApplication.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TApplication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TForm.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bcl.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="builder.gui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
