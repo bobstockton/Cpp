@@ -23,28 +23,28 @@ TApplication::~TApplication() {
 void TApplication::CreateForm( std::string FormName, TForm *Form )
 {
     // Read definition of this form form the definition file & create the components
+    Form = new TForm();
+    Form->setWindow( new Gtk::Window );
     Form->Title = "Demo Form Title";
-    Form->Height = 400;
-    Form->Width  = 800;
-    
-    Form->Window = gtk_application_windows_new( GTK_ORIENTATION_HORIZONTAL );
-    
-  
+    Form->SetSize( 100, 100 );
+    mMainForm = Form;
+ 
 }
 
-void TApplication::Initialise()
+void TApplication::Initialise( int argc, char *argv[] )
 {
-    gtkApp = gtk_application_new( Name.c_str(), G_APPLICATION_FLAGS_NONE ); 
-    
+   auto gtkApp = Gtk::Application::create( argc, argv, "local.example.bcl");
+   mGtkApp = gtkApp;
+   
 }
      
  
- void TApplication::Initialize()
+ void TApplication::Initialize( int argc, char *argv[] )
  {
-     return Initialise();
+     Initialise(argc, argv );
  }
- void TApplication::Run()
+ void TApplication::Run( int argc, char *argv[])
  {
-     
+    mGtkApp->run(*mMainForm->getWindow());
  }
 

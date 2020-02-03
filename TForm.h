@@ -10,21 +10,28 @@
 
 #include <string>
 
-#include <TObject.h>
-#include <gtk/gtk.h>
+#include <gtkmm.h>
 
-class TForm : public TObject
+class TForm 
 {
 public:
     TForm();
     TForm(const TForm& orig);
     virtual ~TForm();
+    Gtk::Window *getWindow();
+    void    setWindow( Gtk::Window *window);
+    
+    void    SetSize( int Height, int Width );
+  
+    std::string Title;
+   
  
 private:
-    GtkWidget *window;
-    int         Height;
-    int         Width;
-
+  
+    int             mHeight;
+    int             mWidth;
+    Gtk::Window    *mWindow;
+  
 };
 
 #endif /* TOBJECT_H */

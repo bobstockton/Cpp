@@ -12,26 +12,27 @@
 #ifndef TAPPLICATION_H
 #define TAPPLICATION_H
 
-#include <gtk/gtk.h>
+#include <gtkmm.h>
 
 #include <string>
 #include <TForm.h>
 
-class TApplication : public TObject
+class TApplication 
 {
 public:
     TApplication();
     TApplication(const TApplication& orig);
     virtual ~TApplication();
-    void CreateForm( std::string FormName, TForm *orm );
-    void Initialise();
-    void Initialize();
-    void Run();
+    void CreateForm( std::string FormName, TForm *Form );
+    void Initialise( int argc, char *argv[]);
+    void Initialize( int argc, char *argv[]);
+    void Run( int argc, char *argv[]);
     
     std::string     Name;
     
 private:
-    GtkApplication *gtkApp;
+ Glib::RefPtr<Gtk::Application> mGtkApp;
+ TForm  *mMainForm;
 
 };
 
