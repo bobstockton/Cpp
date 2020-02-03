@@ -23,3 +23,12 @@ TObject *TObject::Create()
     
 }
 
+std::string TObject::getName()
+{
+    return mName;
+}
+
+void TObject::setName(std::string Name )
+{
+    mName = Name;
+}

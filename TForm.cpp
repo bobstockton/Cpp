@@ -12,7 +12,7 @@
 #include "TForm.h"
 
 TForm::TForm() {
-    
+   // mClass = "TForm";
 }
 
 TForm::TForm(const TForm& orig) {

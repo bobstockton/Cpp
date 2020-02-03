@@ -12,7 +12,9 @@
 
 #include <gtkmm.h>
 
-class TForm 
+#include <TVisibleObject.h>
+
+class TForm : public TVisibleObject
 {
 public:
     TForm();
@@ -20,14 +22,14 @@ public:
     virtual ~TForm();
     Gtk::Window *getWindow();
     void    setWindow( Gtk::Window *window);
-    
+
     void    SetSize( int Height, int Width );
   
     std::string Title;
    
  
 private:
-  
+   
     int             mHeight;
     int             mWidth;
     Gtk::Window    *mWindow;

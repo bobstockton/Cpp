@@ -21,10 +21,18 @@ public:
     TObject();
     TObject(const TObject& orig);
     virtual ~TObject();
-    TObject *Create();
-    std::string ClassName;
+    
+    TObject     *Create();
+ 
+    std::string getName();
+    void        setName( std::string Name );
+    
 private:
-
+    
+    TObject         *mParent;
+    TObject         *mChildren;
+    std::string     mClass;
+    std::string     mName;  
 };
 
 #endif /* TOBJECT_H */

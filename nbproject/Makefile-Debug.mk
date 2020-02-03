@@ -37,8 +37,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Form1.o \
 	${OBJECTDIR}/TApplication.o \
+	${OBJECTDIR}/TFont.o \
 	${OBJECTDIR}/TForm.o \
 	${OBJECTDIR}/TObject.o \
+	${OBJECTDIR}/TPosition.o \
+	${OBJECTDIR}/TSize.o \
 	${OBJECTDIR}/main.o
 
 
@@ -76,6 +79,11 @@ ${OBJECTDIR}/TApplication.o: TApplication.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TApplication.o TApplication.cpp
 
+${OBJECTDIR}/TFont.o: TFont.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TFont.o TFont.cpp
+
 ${OBJECTDIR}/TForm.o: TForm.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -85,6 +93,16 @@ ${OBJECTDIR}/TObject.o: TObject.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TObject.o TObject.cpp
+
+${OBJECTDIR}/TPosition.o: TPosition.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TPosition.o TPosition.cpp
+
+${OBJECTDIR}/TSize.o: TSize.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSize.o TSize.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

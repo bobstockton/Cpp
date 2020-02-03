@@ -6,8 +6,12 @@
                    projectFiles="true">
       <itemPath>Form1.h</itemPath>
       <itemPath>TApplication.h</itemPath>
+      <itemPath>TFont.h</itemPath>
       <itemPath>TForm.h</itemPath>
       <itemPath>TObject.h</itemPath>
+      <itemPath>TPosition.h</itemPath>
+      <itemPath>TSize.h</itemPath>
+      <itemPath>TVisibleObject.h</itemPath>
       <itemPath>bcl.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -19,8 +23,11 @@
                    projectFiles="true">
       <itemPath>Form1.cpp</itemPath>
       <itemPath>TApplication.cpp</itemPath>
+      <itemPath>TFont.cpp</itemPath>
       <itemPath>TForm.cpp</itemPath>
       <itemPath>TObject.cpp</itemPath>
+      <itemPath>TPosition.cpp</itemPath>
+      <itemPath>TSize.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -60,6 +67,10 @@
       </item>
       <item path="TApplication.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="TFont.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TFont.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TForm.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TForm.h" ex="false" tool="3" flavor2="0">
@@ -67,6 +78,16 @@
       <item path="TObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TPosition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TPosition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TSize.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TSize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TVisibleObject.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="bcl.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -103,6 +124,10 @@
       </item>
       <item path="TApplication.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="TFont.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TFont.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TForm.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TForm.h" ex="false" tool="3" flavor2="0">
@@ -110,6 +135,16 @@
       <item path="TObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TPosition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TPosition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TSize.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TSize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TVisibleObject.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="bcl.hpp" ex="false" tool="3" flavor2="0">
       </item>
