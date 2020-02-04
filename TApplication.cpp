@@ -23,11 +23,16 @@ TApplication::~TApplication() {
 void TApplication::CreateForm( std::string FormName, TForm *Form )
 {
     // Read definition of this form form the definition file & create the components
+    Gtk::Window *window;
+    
+    window = new Gtk::Window;
     Form = new TForm();
-    Form->setWindow( new Gtk::Window );
-    Form->Title = "Demo Form Title";
-    Form->SetSize( 100, 100 );
+    Form->setWindow( window );
+    Form->setTitle("Demo Form Title");
+    Form->setSize( 500, 100 );
     mMainForm = Form;
+    Form->LoadForm("Form1.dfm");
+    
  
 }
 

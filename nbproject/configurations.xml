@@ -22,12 +22,14 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Form1.cpp</itemPath>
+      <itemPath>Form1.dfm</itemPath>
       <itemPath>TApplication.cpp</itemPath>
       <itemPath>TFont.cpp</itemPath>
       <itemPath>TForm.cpp</itemPath>
       <itemPath>TObject.cpp</itemPath>
       <itemPath>TPosition.cpp</itemPath>
       <itemPath>TSize.cpp</itemPath>
+      <itemPath>TVisibleObject.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -55,11 +57,14 @@
         <ccTool>
           <incDir>
             <pElem>.</pElem>
+            <pElem>/usr/local/boost_1_72_0</pElem>
           </incDir>
           <commandLine>$$(pkg-config --libs --cflags gtkmm-3.0)</commandLine>
         </ccTool>
       </compileType>
       <item path="Form1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Form1.dfm" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Form1.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -86,6 +91,8 @@
       <item path="TSize.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TSize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TVisibleObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TVisibleObject.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -118,6 +125,8 @@
       </compileType>
       <item path="Form1.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="Form1.dfm" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Form1.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TApplication.cpp" ex="false" tool="1" flavor2="0">
@@ -143,6 +152,8 @@
       <item path="TSize.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TSize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TVisibleObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TVisibleObject.h" ex="false" tool="3" flavor2="0">
       </item>

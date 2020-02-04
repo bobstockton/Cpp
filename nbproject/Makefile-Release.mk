@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/TObject.o \
 	${OBJECTDIR}/TPosition.o \
 	${OBJECTDIR}/TSize.o \
+	${OBJECTDIR}/TVisibleObject.o \
 	${OBJECTDIR}/main.o
 
 
@@ -103,6 +104,11 @@ ${OBJECTDIR}/TSize.o: TSize.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSize.o TSize.cpp
+
+${OBJECTDIR}/TVisibleObject.o: TVisibleObject.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TVisibleObject.o TVisibleObject.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

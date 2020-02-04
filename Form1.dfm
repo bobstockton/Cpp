@@ -1,0 +1,20 @@
+<Object>
+    <name>frmForm1</name>
+    <type>TForm</type>
+    <top>100</top>
+    <left>100</left>
+    <width>500</width>
+    <height>100</height>
+    <title>Demo Title for Form1</title>
+    <Object>
+        <name>cmdCancel</type>
+        <type>TButton</type>
+        <top>10</top>
+        <left>10</left>
+        <width>50</width>
+        <height>10</height>
+        <caption>Cancel</caption>
+        <taborder>1</taborder>
+        <onClick>cmdCancelClick</onClick>
+    </object>
+</Object>

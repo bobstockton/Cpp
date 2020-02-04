@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/TObject.o \
 	${OBJECTDIR}/TPosition.o \
 	${OBJECTDIR}/TSize.o \
+	${OBJECTDIR}/TVisibleObject.o \
 	${OBJECTDIR}/main.o
 
 
@@ -72,42 +73,47 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppapplication_1: ${OBJECTFILES}
 ${OBJECTDIR}/Form1.o: Form1.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Form1.o Form1.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Form1.o Form1.cpp
 
 ${OBJECTDIR}/TApplication.o: TApplication.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TApplication.o TApplication.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TApplication.o TApplication.cpp
 
 ${OBJECTDIR}/TFont.o: TFont.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TFont.o TFont.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TFont.o TFont.cpp
 
 ${OBJECTDIR}/TForm.o: TForm.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TForm.o TForm.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TForm.o TForm.cpp
 
 ${OBJECTDIR}/TObject.o: TObject.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TObject.o TObject.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TObject.o TObject.cpp
 
 ${OBJECTDIR}/TPosition.o: TPosition.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TPosition.o TPosition.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TPosition.o TPosition.cpp
 
 ${OBJECTDIR}/TSize.o: TSize.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSize.o TSize.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSize.o TSize.cpp
+
+${OBJECTDIR}/TVisibleObject.o: TVisibleObject.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TVisibleObject.o TVisibleObject.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
