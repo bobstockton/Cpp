@@ -12,11 +12,13 @@
 #ifndef TVISIBLEOBJECT_H
 #define TVISIBLEOBJECT_H
 
+#include <TObject.h>
 #include <TPosition.h>
 #include <TFont.h>
 #include <TSize.h>
 
-class TVisibleObject {
+class TVisibleObject : public TObject
+{
 public:
     TVisibleObject();
     TVisibleObject(const TVisibleObject& orig);
@@ -31,6 +33,10 @@ protected:
     bool        mVisible;
     bool        mFocus;
     int         mSequence;
+    int             mHeight;
+    int             mLeft;
+    int             mTop;
+    int             mWidth;
 
 };
 

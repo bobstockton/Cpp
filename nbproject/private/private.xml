@@ -8,16 +8,20 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/robert/NetBeansProjects/CppApplication_1/TObject.h</file>
-            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TPosition.h</file>
-            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TFont.h</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TVisibleObject.cpp</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/Form1.cpp</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TApplication.h</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/main.cpp</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/Form1.dfm</file>
             <file>file:/home/robert/NetBeansProjects/CppApplication_1/TObject.cpp</file>
             <file>file:/home/robert/NetBeansProjects/CppApplication_1/TVisibleObject.h</file>
-            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TSize.cpp</file>
-            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TPosition.cpp</file>
-            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TFont.cpp</file>
-            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TSize.h</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TButton.cpp</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TApplication.cpp</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/Form1.h</file>
             <file>file:/home/robert/NetBeansProjects/CppApplication_1/TForm.cpp</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/Form2.dfm</file>
             <file>file:/home/robert/NetBeansProjects/CppApplication_1/TForm.h</file>
+            <file>file:/home/robert/NetBeansProjects/CppApplication_1/TButton.h</file>
         </group>
     </open-files>
 </project-private>

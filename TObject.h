@@ -29,6 +29,8 @@ public:
     
 private:
     
+protected:
+    
     TObject         *mParent;
     TObject         *mChildren;
     std::string     mClass;

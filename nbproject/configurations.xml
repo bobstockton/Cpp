@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>Form1.h</itemPath>
       <itemPath>TApplication.h</itemPath>
+      <itemPath>TButton.h</itemPath>
       <itemPath>TFont.h</itemPath>
       <itemPath>TForm.h</itemPath>
       <itemPath>TObject.h</itemPath>
@@ -23,7 +24,9 @@
                    projectFiles="true">
       <itemPath>Form1.cpp</itemPath>
       <itemPath>Form1.dfm</itemPath>
+      <itemPath>Form2.dfm</itemPath>
       <itemPath>TApplication.cpp</itemPath>
+      <itemPath>TButton.cpp</itemPath>
       <itemPath>TFont.cpp</itemPath>
       <itemPath>TForm.cpp</itemPath>
       <itemPath>TObject.cpp</itemPath>
@@ -68,9 +71,15 @@
       </item>
       <item path="Form1.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Form2.dfm" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TApplication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TButton.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TButton.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TFont.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -129,9 +138,15 @@
       </item>
       <item path="Form1.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Form2.dfm" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TApplication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TButton.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TButton.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TFont.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Form1.o \
 	${OBJECTDIR}/TApplication.o \
+	${OBJECTDIR}/TButton.o \
 	${OBJECTDIR}/TFont.o \
 	${OBJECTDIR}/TForm.o \
 	${OBJECTDIR}/TObject.o \
@@ -79,6 +80,11 @@ ${OBJECTDIR}/TApplication.o: TApplication.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TApplication.o TApplication.cpp
+
+${OBJECTDIR}/TButton.o: TButton.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TButton.o TButton.cpp
 
 ${OBJECTDIR}/TFont.o: TFont.cpp
 	${MKDIR} -p ${OBJECTDIR}

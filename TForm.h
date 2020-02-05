@@ -23,23 +23,30 @@ public:
     TForm(const TForm& orig);
     virtual ~TForm();
     
-    bool        LoadForm( std::string FormDefinitionFile );
-   
+    bool        isMainForm();
+    bool        LoadForm(  );
+    void        setHeight( int height );
+    void        setLeft( int left );
     void        setSize( int Height, int Width );
     std::string getTitle();
     void        setTitle( std::string Title );
+    void        setTop( int top );
+    void        setWidth( int width );
     Gtk::Window *getWindow();
     void        setWindow( Gtk::Window *window);
+    void        setPosition();
  
 private:
-   
-    int             mHeight;
     std::string     mTitle;
-    int             mWidth;
-    Gtk::Window    *mWindow;
+  
+    bool            mMainForm;
     
-    std::string     getToken( FILE *ifile );
+    bool            getToken( FILE *ifile , std::string &token, std::string &value);
     void            createComponent( FILE *ifile );
+    void            splitLine( char *line, std::string &token, std::string &value );
+    
+protected:
+    Gtk::Window    *mWindow;
   
 };
 

@@ -1,13 +1,13 @@
 <object>
-    <name>frmForm1</name>
+    <name>frmForm2</name>
     <type>TForm</type>
-    <top>10</top>
-    <left>10</left>
+    <top>100</top>
+    <left>100</left>
     <width>800</width>
     <height>400</height>
-    <title>Demo Title for Form1</title>
-    <visible>true</visible>
-    <mainform>true</mainform>
+    <title>Demo Title for Form2</title>
+    <visible>false</visible>
+    <mainform>false</mainform>
     <object>
         <name>cmdCancel</type>
         <type>TButton</type>
