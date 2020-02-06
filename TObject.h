@@ -35,6 +35,7 @@ protected:
     TObject         *mChildren;
     std::string     mClass;
     std::string     mName;  
+  
 };
 
 #endif /* TOBJECT_H */

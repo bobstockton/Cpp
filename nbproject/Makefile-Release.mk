@@ -40,6 +40,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/TButton.o \
 	${OBJECTDIR}/TFont.o \
 	${OBJECTDIR}/TForm.o \
+	${OBJECTDIR}/TFormDefinition.o \
+	${OBJECTDIR}/TFormDefinitionSection.o \
 	${OBJECTDIR}/TObject.o \
 	${OBJECTDIR}/TPosition.o \
 	${OBJECTDIR}/TSize.o \
@@ -95,6 +97,16 @@ ${OBJECTDIR}/TForm.o: TForm.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TForm.o TForm.cpp
+
+${OBJECTDIR}/TFormDefinition.o: TFormDefinition.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TFormDefinition.o TFormDefinition.cpp
+
+${OBJECTDIR}/TFormDefinitionSection.o: TFormDefinitionSection.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TFormDefinitionSection.o TFormDefinitionSection.cpp
 
 ${OBJECTDIR}/TObject.o: TObject.cpp
 	${MKDIR} -p ${OBJECTDIR}

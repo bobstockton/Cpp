@@ -9,6 +9,8 @@
       <itemPath>TButton.h</itemPath>
       <itemPath>TFont.h</itemPath>
       <itemPath>TForm.h</itemPath>
+      <itemPath>TFormDefinition.h</itemPath>
+      <itemPath>TFormDefinitionSection.h</itemPath>
       <itemPath>TObject.h</itemPath>
       <itemPath>TPosition.h</itemPath>
       <itemPath>TSize.h</itemPath>
@@ -23,16 +25,18 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Form1.cpp</itemPath>
-      <itemPath>Form1.dfm</itemPath>
-      <itemPath>Form2.dfm</itemPath>
       <itemPath>TApplication.cpp</itemPath>
       <itemPath>TButton.cpp</itemPath>
       <itemPath>TFont.cpp</itemPath>
       <itemPath>TForm.cpp</itemPath>
+      <itemPath>TFormDefinition.cpp</itemPath>
+      <itemPath>TFormDefinitionSection.cpp</itemPath>
       <itemPath>TObject.cpp</itemPath>
       <itemPath>TPosition.cpp</itemPath>
       <itemPath>TSize.cpp</itemPath>
       <itemPath>TVisibleObject.cpp</itemPath>
+      <itemPath>frmForm1.dfm</itemPath>
+      <itemPath>frmForm2.dfm</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -67,11 +71,7 @@
       </compileType>
       <item path="Form1.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Form1.dfm" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Form1.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Form2.dfm" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -88,6 +88,14 @@
       <item path="TForm.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TFormDefinition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TFormDefinition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TFormDefinitionSection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TFormDefinitionSection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -108,6 +116,10 @@
       <item path="bcl.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="builder.gui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="frmForm1.dfm" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="frmForm2.dfm" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -134,11 +146,7 @@
       </compileType>
       <item path="Form1.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Form1.dfm" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Form1.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Form2.dfm" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -155,6 +163,14 @@
       <item path="TForm.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TFormDefinition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TFormDefinition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TFormDefinitionSection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TFormDefinitionSection.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -175,6 +191,10 @@
       <item path="bcl.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="builder.gui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="frmForm1.dfm" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="frmForm2.dfm" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

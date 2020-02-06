@@ -8,13 +8,12 @@
 #ifndef TFORM_H
 #define TFORM_H
 
-#define DFMLINELENGTH     500
-
 #include <string>
 
 #include <gtkmm.h>
-#include <stdio.h>
+
 #include <TVisibleObject.h>
+#include <TFormDefinition.h>
 
 class TForm : public TVisibleObject
 {
@@ -27,7 +26,7 @@ public:
     bool        LoadForm(  );
     void        setHeight( int height );
     void        setLeft( int left );
-    void        setSize( int Height, int Width );
+    void        setSize(  );
     std::string getTitle();
     void        setTitle( std::string Title );
     void        setTop( int top );
@@ -40,6 +39,8 @@ private:
     std::string     mTitle;
   
     bool            mMainForm;
+    TFormDefinition *mFormDefinition;
+
     
     bool            getToken( FILE *ifile , std::string &token, std::string &value);
     void            createComponent( FILE *ifile );

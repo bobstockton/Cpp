@@ -23,6 +23,7 @@ TForm::TForm() {
     mMainForm   = false;
     
     mWindow = new Gtk::Window;
+    mFormDefinition = new TFormDefinition();
 }
 
 TForm::TForm(const TForm& orig) {
@@ -44,7 +45,7 @@ bool TForm::isMainForm()
 void TForm::setHeight( int height )
 {
     mHeight = height;
-    setSize( mWidth, mHeight );
+    setSize(  );
 }
 
 void    TForm::setLeft( int left )
@@ -58,12 +59,9 @@ void    TForm::setPosition()
     mWindow->move( mLeft, mTop );
 }
 
-void    TForm::setSize( int Width, int Height )
+void    TForm::setSize(  )
 {
-    mWidth = Width;
-    mHeight = Height;
-    
-    mWindow->set_default_size( Width, Height );   
+    mWindow->set_default_size( mWidth, mHeight );   
 }
 
 std::string TForm::getTitle()
@@ -86,7 +84,7 @@ void    TForm::setTop( int top )
 void    TForm::setWidth( int width )
 {
     mWidth = width;
-    setSize( mWidth, mHeight );
+    setSize(  );
 }
 
 void    TForm::setWindow( Gtk::Window *window)
@@ -96,141 +94,48 @@ void    TForm::setWindow( Gtk::Window *window)
 
 bool   TForm::LoadForm(  )
 {
-    // Open form file
-    FILE *FormFile;
-    std::string  formDefinitionFile;
-    std::string token;
-    std::string value;
-    
-    formDefinitionFile = mName + ".dfm";
-    FormFile = fopen( formDefinitionFile.c_str(), "r" );
-    if( FormFile == NULL )
+    string  value;
+    try
     {
-        return false;
-    }
-    
-    parseFormDefinitionFile( FormFile,  )
-     
-    // Check for first Object for form values
-    getToken( FormFile, token, value );
-    if( token != "object")
-    {
-        return false;
-    }
-    getToken( FormFile, token, value );
-    // Process Form Data
-    while( token != "/object" )
-    {
-        if( token == "eof")
+        mFormDefinition->Load( mName );
+        // Get form section values
+        for( int i = 0 ; i< mFormDefinition->getSectionCount() ; i++ ) 
         {
-            throw (std::string("Invalid format for form definition file : ") + formDefinitionFile ); 
-        }
-        if( token == "title" )
-        {
-            setTitle(value);
-        }
-        else if( token == "top" )
-        {
-            setTop(std::stoi(value));
-        }
-        else if( token == "left" )
-        {
-            setLeft( std::stoi(value ));
-       }
-        else if( token == "height")
-        {
-            setHeight( std::stoi(value ));
-        }
-        else if( token == "width" )
-        {
-            setWidth(std::stoi(value));
-        }
-        else if( token == "type" )
-        { 
-        }
-        else if( token == "mainform" )
-        { 
-            mMainForm = ( value == "true" );
-        }
-        else if( token == "visible" )
-        {
-            mVisible = ( value == "true" );
-        }
-        else if( token == "object" )
-        {
-            // Create new Component on the form
-            createComponent( FormFile );
-        }
-        getToken( FormFile, token, value );   
+            mFormDefinition->getValue( i, "name", value );
+            if( value == mName )
+            {
+                // Section is for this form
+                if( mFormDefinition->getValue(i, "top", value ))    mTop        = stoi( value );
+                if( mFormDefinition->getValue(i, "left", value))    mLeft       = stoi( value ); 
+                if( mFormDefinition->getValue(i, "height", value))  mHeight     = stoi( value );
+                if( mFormDefinition->getValue(i, "width", value))   mWidth      = stoi( value );
+                if( mFormDefinition->getValue(i, "title", value))   mTitle      = value;
+                if( mFormDefinition->getValue(i, "visible", value)) mVisible    = (value == "true");
+                if( mFormDefinition->getValue(i, "mainform", value))mMainForm   = (value == "true" );
+                if( mFormDefinition->getValue(i, "class", value))   mClass      = value;
+                
+            }
+            else
+            {
+                // new component
+            }
             
+        }
+        
+        
     }
-}
+    catch( string e )
+    {
+        
+    }
+    
+}  
+    
 
 void    TForm::createComponent( FILE *ifile )
 {
-    pair<string, string> tokenArray[100];
-    string  token;
-    string  value;
-    string  objclass;
-    int i = 0;
     
-    // Build up a list of component values for one object
-    token = "";
-    while( token != "/object") 
-    {
-        if( !getToken( ifile , token, value )) throw ("EOF Reached");
-        if( token == "eof" )
-        {
-            throw("EOF Reached" );
-        }
-        tokenArray[i++] = { token, value };
-    } 
 }
 
-bool TForm::getToken( FILE *ifile , string &token, string &value )
-{
-    char line[DFMLINELENGTH];
-    string str;
-    
-    if( fgets( line, DFMLINELENGTH , ifile ))
-    {
-        splitLine( line, token, value );
-        return true;
-    }
-    token = "eof";
-    value = "";
-    return false;
-}
 
-void TForm::splitLine( char *line, string &token, string &value )
-{
-    char *start;
-    char *end;
-
-    char    tmp[200];
-    
-    value = "";
-   
-    start = strchr( line, '<' );
-    end = strchr(line, '>' );
-    strncpy( tmp, start+1, end-start);
-    tmp[end-start-1] = '\0';
-    token = tmp;
-    try
-    {
-         start = strchr( end+1,'<' );
-         if( start > 0 )
-         {
-            strncpy( tmp, end+1, start-end-1);
-            tmp[start-end-1] = '\0';
-    
-            value = tmp;
-         }
-       
-    }
-    catch(...)
-    {
-    }           
-  
-}
 
