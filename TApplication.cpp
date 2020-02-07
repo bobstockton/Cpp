@@ -47,6 +47,7 @@ void TApplication::Initialise( int argc, char *argv[] )
  }
  void TApplication::Run( int argc, char *argv[])
  {
+    if( mMainForm == NULL ) throw ("No Main Form Defined");
     mGtkApp->run(*mMainForm->getWindow());
  }
 

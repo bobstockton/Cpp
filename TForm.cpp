@@ -22,6 +22,8 @@ TForm::TForm() {
     mLeft       = 10;
     mMainForm   = false;
     
+    mComponentCount = 0;
+    
     mWindow = new Gtk::Window;
     mFormDefinition = new TFormDefinition();
 }
@@ -101,26 +103,30 @@ bool   TForm::LoadForm(  )
         // Get form section values
         for( int i = 0 ; i< mFormDefinition->getSectionCount() ; i++ ) 
         {
-            mFormDefinition->getValue( i, "name", value );
-            if( value == mName )
-            {
-                // Section is for this form
-                if( mFormDefinition->getValue(i, "top", value ))    mTop        = stoi( value );
-                if( mFormDefinition->getValue(i, "left", value))    mLeft       = stoi( value ); 
-                if( mFormDefinition->getValue(i, "height", value))  mHeight     = stoi( value );
-                if( mFormDefinition->getValue(i, "width", value))   mWidth      = stoi( value );
-                if( mFormDefinition->getValue(i, "title", value))   mTitle      = value;
-                if( mFormDefinition->getValue(i, "visible", value)) mVisible    = (value == "true");
-                if( mFormDefinition->getValue(i, "mainform", value))mMainForm   = (value == "true" );
-                if( mFormDefinition->getValue(i, "class", value))   mClass      = value;
-                
-            }
-            else
-            {
+//            mFormDefinition->getValue( i, "name", value );
+//            if( value == mName )
+//            {
+//                // Section is for this form
+//                if( mFormDefinition->getValue(i, "top", value ))    mTop        = stoi( value );
+//                if( mFormDefinition->getValue(i, "left", value))    mLeft       = stoi( value ); 
+//                if( mFormDefinition->getValue(i, "height", value))  mHeight     = stoi( value );
+//                if( mFormDefinition->getValue(i, "width", value))   mWidth      = stoi( value );
+//                if( mFormDefinition->getValue(i, "title", value))   mTitle      = value;
+//                if( mFormDefinition->getValue(i, "visible", value)) mVisible    = (value == "true");
+//                if( mFormDefinition->getValue(i, "mainform", value))mMainForm   = (value == "true" );
+//                if( mFormDefinition->getValue(i, "class", value))   mClass      = value;
+//                
+//            }
+//            else
+//            {
                 // new component
-            }
+                createComponent( i );
+//            }
             
         }
+        setPosition();
+        setSize();
+        
         
         
     }
@@ -132,9 +138,51 @@ bool   TForm::LoadForm(  )
 }  
     
 
-void    TForm::createComponent( FILE *ifile )
+void    TForm::createComponent( int section)
 {
+    string  value;
+    string   name;
     
+    TFormDefinitionSection   *sectionDef;
+    TVisibleObject           *component;
+    
+    
+    if( !mFormDefinition->getValue(section, "class", value ))
+    {
+        throw ("Missing Class for COmponent" );
+    }
+    if( !mFormDefinition->getValue(section, "name", name ))
+    {
+        throw ("Missing Name for Component" );
+    }
+
+    sectionDef = mFormDefinition->getSection(section);
+    
+    if( value == "TForm" )
+    {
+        sectionDef->getInt(     "top",      mTop );
+        sectionDef->getInt(     "left",     mLeft);
+        sectionDef->getInt(     "height",   mHeight);
+        sectionDef->getInt(     "width",    mWidth);
+        sectionDef->getString(  "title",    mTitle);
+        sectionDef->getBool(    "visible",  mVisible);
+        sectionDef->getBool(    "mainform", mMainForm);
+        sectionDef->getString(  "class",    mClass);
+        return;
+    }
+    if( value == "TButton" )
+    {
+        component = new TButton( sectionDef, this );
+        
+    }
+    
+    addComponent( component );
+
+}
+
+void TForm::addComponent( TVisibleObject *component )
+{
+    mComponentArray[mComponentCount++] = component;
 }
 
 

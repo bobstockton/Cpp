@@ -10,7 +10,7 @@
     <mainform>true</mainform>
     <object>
         <name>cmdCancel</type>
-        <type>TButton</type>
+        <class>TButton</class>
         <top>10</top>
         <left>10</left>
         <width>50</width>

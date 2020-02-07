@@ -14,6 +14,9 @@
 
 #include <TVisibleObject.h>
 #include <TFormDefinition.h>
+#include <TButton.h>
+
+#define MAXCOMPONENTS 500
 
 class TForm : public TVisibleObject
 {
@@ -41,13 +44,18 @@ private:
     bool            mMainForm;
     TFormDefinition *mFormDefinition;
 
-    
+    void            addComponent( TVisibleObject *component );
     bool            getToken( FILE *ifile , std::string &token, std::string &value);
-    void            createComponent( FILE *ifile );
+    void            createComponent( int section );
     void            splitLine( char *line, std::string &token, std::string &value );
     
 protected:
     Gtk::Window    *mWindow;
+    
+    TVisibleObject  *mComponentArray[MAXCOMPONENTS];
+            
+    int             mComponentCount;
+            
   
 };
 

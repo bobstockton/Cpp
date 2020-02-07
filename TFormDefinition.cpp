@@ -81,7 +81,16 @@ bool    TFormDefinition::Load( string formName )
     
 } 
             
+TFormDefinitionSection *TFormDefinition::getSection( int i )
+{
+    if( i < mSectionCount)
+    {
+        return mSections[i];
+    }
+    throw( "Missing Form Definition Section" );
     
+}
+
  
 int TFormDefinition::getSectionCount()
 {

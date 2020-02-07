@@ -9,8 +9,8 @@
     <visible>false</visible>
     <mainform>false</mainform>
     <object>
-        <name>cmdCancel</type>
-        <type>TButton</type>
+        <name>cmdCancel</name>
+        <class>TButton</class>
         <top>10</top>
         <left>10</left>
         <width>50</width>

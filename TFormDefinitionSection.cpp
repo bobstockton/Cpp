@@ -59,7 +59,7 @@ void    TFormDefinitionSection::setSection( string section )
 
 bool  TFormDefinitionSection::getValue( string token , string &value )
 {
-    for( int i ; i < mCount ; i++ )
+    for( int i=0 ; i < mCount ; i++ )
     {
         if( mSectionLines[i]->token == token )
         {
@@ -69,6 +69,35 @@ bool  TFormDefinitionSection::getValue( string token , string &value )
     }
     value = "";
     return false;
+}
+
+bool    TFormDefinitionSection::getString( string token, string &value )
+{
+    bool ret;
+    
+    ret = getValue( token, value );
+    
+    return ret;
+}
+
+bool    TFormDefinitionSection::getInt( string token, int &value )
+{
+    bool ret;
+    string  stringValue;
+    
+    ret = getValue( token, stringValue);
+    value = stoi( stringValue );
+    
+}
+bool    TFormDefinitionSection::getBool( string token, bool &value )
+{
+    bool ret;
+    string  stringValue;
+    
+    ret = getValue( token, stringValue );
+    value = ( stringValue == "true" );
+    
+    return ret;
 }
     
 

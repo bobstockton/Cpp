@@ -24,6 +24,17 @@ TButton::TButton(Gtk::Window *window, int left, int top, int width , int height,
 TButton::TButton(const TButton& orig) {
 }
 
+TButton::TButton( TFormDefinitionSection *section, TObject  *parent ) 
+{
+    section->getString( "name" ,    mName );
+    section->getInt(    "top",      mTop);
+    section->getInt(    "left",     mLeft);
+    section->getInt(    "width",    mWidth );
+    section->getInt(    "height",   mHeight );
+    section->getBool(   "visible",  mVisible );
+    mParent = parent;
+}
+
 TButton::~TButton() {
 }
 

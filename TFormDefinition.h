@@ -28,9 +28,11 @@ public:
     TFormDefinition();
     TFormDefinition(const TFormDefinition& orig);
     virtual ~TFormDefinition();
-    int     getSectionCount();
-    bool    getValue(int section, string token, string &value );
-    bool    Load( string formName );
+    
+    TFormDefinitionSection *getSection( int i ); 
+    int                     getSectionCount();
+    bool                    getValue(int section, string token, string &value );
+    bool                    Load( string formName );
 private:
         
     bool                    getToken( FILE *ifile , string &token, string &value );

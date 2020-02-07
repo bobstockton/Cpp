@@ -36,6 +36,9 @@ public:
     string  getSection();
     void    setSection( string section );
     bool    getValue( string token, string &value  );
+    bool    getString( string token, string &value );
+    bool    getInt( string token, int &value );
+    bool    getBool( string token, bool &value );
     
    
     
