@@ -12,19 +12,28 @@
 #include "Form1.h"
 
 Form1::Form1() {
+    
 }
 
 Form1::Form1(const Form1& orig) {
 }
 
-Form1::~Form1() {
+Form1::~Form1() 
+{
 }
 
-void    Form1::addComponents( )
+void    Form1::Initialise()
 {
-    // Components here must match dfm
-    cmdButton1 = new TButton( mWindow, 10,10,20,10, "Cancel" );
-    
+    TForm::Initialise();
+    cmdCancel = dynamic_cast<TButton *>(getComponent("cmdCancel"));
+    cmdCancel->getGtkButton()->signal_clicked().connect(sigc::mem_fun(this, &Form1::cmdCancel_OnClick));
 }
+
+void    Form1::cmdCancel_OnClick()
+{
+    cmdCancel->setCaption("Clicked!");
+}
+
+
 
 

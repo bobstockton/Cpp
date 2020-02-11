@@ -24,11 +24,24 @@ public:
     TButton(Gtk::Window *window, int left, int top, int width , int height, string caption);
     TButton(const TButton& orig);
     TButton( TFormDefinitionSection *section, TObject  *parent ) ;
+    
+    void    OnClick();
+    
     virtual ~TButton();
+    void    setCaption( string );
+    virtual void rtti_function(){};
+    
+    
+    Gtk::Button *getGtkButton();
+    
+    
+   
+    
+   
 private:
     Gtk::Button *gtkButton;
     
-
+    string  mCaption;
 };
 
 #endif /* TBUTTON_H */

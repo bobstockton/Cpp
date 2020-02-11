@@ -11,10 +11,12 @@
 #include <string>
 
 #include <gtkmm.h>
+#include <gtkmm/button.h>
 
 #include <TVisibleObject.h>
 #include <TFormDefinition.h>
 #include <TButton.h>
+#include <TEvent.h>
 
 #define MAXCOMPONENTS 500
 
@@ -23,20 +25,23 @@ class TForm : public TVisibleObject
 public:
     TForm();
     TForm(const TForm& orig);
-    virtual ~TForm();
+    virtual ~TForm();       
     
-    bool        isMainForm();
-    bool        LoadForm(  );
-    void        setHeight( int height );
-    void        setLeft( int left );
-    void        setSize(  );
-    std::string getTitle();
-    void        setTitle( std::string Title );
-    void        setTop( int top );
-    void        setWidth( int width );
-    Gtk::Window *getWindow();
-    void        setWindow( Gtk::Window *window);
-    void        setPosition();
+    virtual void    Initialise();
+    bool            isMainForm();
+    bool            LoadForm(  );
+    void            setHeight( int height );
+    void            setLeft( int left );
+    void            setSize(  );
+    std::string     getTitle();
+    void            setTitle( std::string Title );
+    void            setTop( int top );
+    void            setWidth( int width );
+    Gtk::Window     *getWindow();
+    void            setWindow( Gtk::Window *window);
+    void            setPosition();
+    TVisibleObject *getComponent( string name );
+    virtual void    rtti_function(){};
  
 private:
     std::string     mTitle;
@@ -50,11 +55,15 @@ private:
     void            splitLine( char *line, std::string &token, std::string &value );
     
 protected:
-    Gtk::Window    *mWindow;
+    void            addEvent( string functionName,  void (*functionPtr)());
+    Gtk::Window     *mWindow;
+    Gtk::Fixed      *mFixed;
     
     TVisibleObject  *mComponentArray[MAXCOMPONENTS];
+    TEvent          *mEventArray[MAXCOMPONENTS];
             
     int             mComponentCount;
+    int             mEventCount;
             
   
 };

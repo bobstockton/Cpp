@@ -11,9 +11,9 @@
     <object>
         <name>cmdCancel</type>
         <class>TButton</class>
-        <top>10</top>
-        <left>10</left>
-        <width>50</width>
+        <top>100</top>
+        <left>100</left>
+        <width>100</width>
         <height>10</height>
         <caption>Cancel</caption>
         <taborder>1</taborder>

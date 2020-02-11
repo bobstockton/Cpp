@@ -12,25 +12,36 @@
 #include "TApplication.h"
 
 TApplication::TApplication() {
+    mFormCount = 0;
 }
 
 TApplication::TApplication(const TApplication& orig) {
 }
 
 TApplication::~TApplication() {
+    // Destroy all forms
+    for( int i = 0 ; i < mFormCount; i++ ) 
+    {
+        delete mForms[i];
+    }
+    delete &mGtkApp;
 }
 
 void TApplication::CreateForm( std::string FormName, TForm *Form )
 {
     // Read definition of this form form the definition file & create the components
  
-    Form = new TForm(); 
+   
     Form->setName( FormName );
     Form->LoadForm();
+    Form->Initialise();
     if( Form->isMainForm())
     {
         mMainForm = Form;
     }
+   
+    mForms[mFormCount++] = Form;
+
 }
 
 void TApplication::Initialise( int argc, char *argv[] )

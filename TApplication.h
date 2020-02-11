@@ -19,6 +19,7 @@
 
 class TApplication 
 {
+#define MAXFORMS 50
 public:
     TApplication();
     TApplication(const TApplication& orig);
@@ -34,6 +35,10 @@ private:
  Glib::RefPtr<Gtk::Application> mGtkApp;
  TForm  *mMainForm;
 
+protected:
+    TForm   *mForms[MAXFORMS];
+    
+    int     mFormCount;
 };
 
 #endif /* TAPPLICATION_H */

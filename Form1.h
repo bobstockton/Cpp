@@ -20,12 +20,16 @@ public:
     Form1();
     Form1(const Form1& orig);
     virtual ~Form1();
-    void    addComponents( ) ;
     
-    TButton *cmdButton;
+    void    addComponents( ) ;
+    void    Initialise() override;
+    TButton *cmdCancel;
 private:
     
-    TButton *cmdButton1;
+
+    
+protected:
+    void cmdCancel_OnClick();
 
 };
 

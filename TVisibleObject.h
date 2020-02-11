@@ -11,6 +11,7 @@
 
 #ifndef TVISIBLEOBJECT_H
 #define TVISIBLEOBJECT_H
+#include <gtkmm.h>
 
 #include <TObject.h>
 #include <TPosition.h>
@@ -22,7 +23,8 @@ class TVisibleObject : public TObject
 public:
     TVisibleObject();
     TVisibleObject(const TVisibleObject& orig);
-    virtual ~TVisibleObject();
+    virtual ~TVisibleObject();    
+    virtual void rtti_function() {};
 private:
     
         
@@ -33,10 +35,12 @@ protected:
     bool        mVisible;
     bool        mFocus;
     int         mSequence;
-    int             mHeight;
-    int             mLeft;
-    int             mTop;
-    int             mWidth;
+    int         mHeight;
+    int         mLeft;
+    int         mTop;
+    int         mWidth;
+    
+   
 
 };
 

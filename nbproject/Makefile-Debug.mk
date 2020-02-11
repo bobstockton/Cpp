@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Form1.o \
 	${OBJECTDIR}/TApplication.o \
 	${OBJECTDIR}/TButton.o \
+	${OBJECTDIR}/TEvent.o \
 	${OBJECTDIR}/TFont.o \
 	${OBJECTDIR}/TForm.o \
 	${OBJECTDIR}/TFormDefinition.o \
@@ -87,6 +88,11 @@ ${OBJECTDIR}/TButton.o: TButton.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TButton.o TButton.cpp
+
+${OBJECTDIR}/TEvent.o: TEvent.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TEvent.o TEvent.cpp
 
 ${OBJECTDIR}/TFont.o: TFont.cpp
 	${MKDIR} -p ${OBJECTDIR}

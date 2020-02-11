@@ -7,6 +7,7 @@
       <itemPath>Form1.h</itemPath>
       <itemPath>TApplication.h</itemPath>
       <itemPath>TButton.h</itemPath>
+      <itemPath>TEvent.h</itemPath>
       <itemPath>TFont.h</itemPath>
       <itemPath>TForm.h</itemPath>
       <itemPath>TFormDefinition.h</itemPath>
@@ -27,6 +28,7 @@
       <itemPath>Form1.cpp</itemPath>
       <itemPath>TApplication.cpp</itemPath>
       <itemPath>TButton.cpp</itemPath>
+      <itemPath>TEvent.cpp</itemPath>
       <itemPath>TFont.cpp</itemPath>
       <itemPath>TForm.cpp</itemPath>
       <itemPath>TFormDefinition.cpp</itemPath>
@@ -80,6 +82,10 @@
       <item path="TButton.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TButton.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TEvent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TEvent.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TFont.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -155,6 +161,10 @@
       <item path="TButton.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TButton.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TEvent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TEvent.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TFont.cpp" ex="false" tool="1" flavor2="0">
       </item>

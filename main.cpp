@@ -1,10 +1,11 @@
 
 #include <TApplication.h>
 #include <Form1.h>
+//#include <Form2.h>
 #include <iostream>
 
 TApplication    *Application;
-TForm           *Form1;
+Form1           frmMain;
 TForm           *Form2;
 
 
@@ -14,10 +15,13 @@ int main (int   argc,  char *argv[])
     {
         
         Application = new TApplication();
+        
+      
+       // Form2 = new Form2();
 
         Application->Initialise(argc, argv);
-        Application->CreateForm( "frmForm1", Form1);
-        Application->CreateForm( "frmForm2", Form2);
+        Application->CreateForm( "frmForm1", &frmMain);
+      //  Application->CreateForm( "frmForm2", Form2);
         Application->Run(argc, argv);
     }
     catch( char *e )

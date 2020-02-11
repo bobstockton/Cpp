@@ -105,6 +105,7 @@ bool TFormDefinition::getToken( FILE *ifile , string &token, string &value )
     if( fgets( line, DFMLINELENGTH , ifile ))
     {
         splitLine( line, token, value );
+        token = boost::algorithm::to_lower_copy( token );
         return true;
     }
     token = "eof";

@@ -21,11 +21,9 @@ TForm::TForm() {
     mTop        = 10;
     mLeft       = 10;
     mMainForm   = false;
-    
+    mFormDefinition = new TFormDefinition();
     mComponentCount = 0;
     
-    mWindow = new Gtk::Window;
-    mFormDefinition = new TFormDefinition();
 }
 
 TForm::TForm(const TForm& orig) {
@@ -96,39 +94,22 @@ void    TForm::setWindow( Gtk::Window *window)
 
 bool   TForm::LoadForm(  )
 {
-    string  value;
     try
     {
+        mWindow = new Gtk::Window;
+        mFixed  = new Gtk::Fixed;
+        mWindow->add(*mFixed);
         mFormDefinition->Load( mName );
         // Get form section values
         for( int i = 0 ; i< mFormDefinition->getSectionCount() ; i++ ) 
         {
-//            mFormDefinition->getValue( i, "name", value );
-//            if( value == mName )
-//            {
-//                // Section is for this form
-//                if( mFormDefinition->getValue(i, "top", value ))    mTop        = stoi( value );
-//                if( mFormDefinition->getValue(i, "left", value))    mLeft       = stoi( value ); 
-//                if( mFormDefinition->getValue(i, "height", value))  mHeight     = stoi( value );
-//                if( mFormDefinition->getValue(i, "width", value))   mWidth      = stoi( value );
-//                if( mFormDefinition->getValue(i, "title", value))   mTitle      = value;
-//                if( mFormDefinition->getValue(i, "visible", value)) mVisible    = (value == "true");
-//                if( mFormDefinition->getValue(i, "mainform", value))mMainForm   = (value == "true" );
-//                if( mFormDefinition->getValue(i, "class", value))   mClass      = value;
-//                
-//            }
-//            else
-//            {
                 // new component
-                createComponent( i );
-//            }
-            
+                createComponent( i );           
         }
+        
         setPosition();
-        setSize();
-        
-        
-        
+        setSize();  
+        mWindow->show_all_children();
     }
     catch( string e )
     {
@@ -145,6 +126,8 @@ void    TForm::createComponent( int section)
     
     TFormDefinitionSection   *sectionDef;
     TVisibleObject           *component;
+    
+  
     
     
     if( !mFormDefinition->getValue(section, "class", value ))
@@ -172,11 +155,14 @@ void    TForm::createComponent( int section)
     }
     if( value == "TButton" )
     {
-        component = new TButton( sectionDef, this );
+        TButton *button= new TButton( sectionDef, this );
+        
+        
+        gtk_container_add(GTK_CONTAINER(mFixed->gobj()),  GTK_WIDGET(button->getGtkButton()->gobj()) );
+        
+        addComponent( button );
         
     }
-    
-    addComponent( component );
 
 }
 
@@ -185,5 +171,35 @@ void TForm::addComponent( TVisibleObject *component )
     mComponentArray[mComponentCount++] = component;
 }
 
+TVisibleObject *TForm::getComponent( string name )
+{
+    for( int i= 0 ; i< mComponentCount ; i++ )
+    {
+        if( mComponentArray[i]->getName() == name  )
+        {
+            return mComponentArray[i];
+        }
+    }
+    return NULL;
+}
+
+
+void    TForm::Initialise()
+{
+   
+     
+}
+
+
+//{
+//    TEvent  = new TEvent();
+//    
+//    TEvent->setFunctionName( functionName );
+//    TEvent->setFunctionPointer( functionPtr );
+//    
+//    mEventArray[mEventCount++] = TEvent;
+//    
+//}
+//
 
 
