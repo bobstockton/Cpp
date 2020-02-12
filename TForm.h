@@ -16,6 +16,7 @@
 #include <TVisibleObject.h>
 #include <TFormDefinition.h>
 #include <TButton.h>
+#include <TTextBox.h>
 #include <TEvent.h>
 
 #define MAXCOMPONENTS 500
@@ -26,7 +27,7 @@ public:
     TForm();
     TForm(const TForm& orig);
     virtual ~TForm();       
-    
+    Gtk::Widget     *getGtkWidget() override;
     virtual void    Initialise();
     bool            isMainForm();
     bool            LoadForm(  );
@@ -56,6 +57,7 @@ private:
     
 protected:
     void            addEvent( string functionName,  void (*functionPtr)());
+  
     Gtk::Window     *mWindow;
     Gtk::Fixed      *mFixed;
     

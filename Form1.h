@@ -23,7 +23,10 @@ public:
     
     void    addComponents( ) ;
     void    Initialise() override;
-    TButton *cmdCancel;
+    
+    
+    TButton     *cmdCancel;
+    TTextBox    *txtBox;
 private:
     
 

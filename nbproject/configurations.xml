@@ -15,6 +15,7 @@
       <itemPath>TObject.h</itemPath>
       <itemPath>TPosition.h</itemPath>
       <itemPath>TSize.h</itemPath>
+      <itemPath>TTextBox.h</itemPath>
       <itemPath>TVisibleObject.h</itemPath>
       <itemPath>bcl.hpp</itemPath>
     </logicalFolder>
@@ -36,6 +37,7 @@
       <itemPath>TObject.cpp</itemPath>
       <itemPath>TPosition.cpp</itemPath>
       <itemPath>TSize.cpp</itemPath>
+      <itemPath>TTextBox.cpp</itemPath>
       <itemPath>TVisibleObject.cpp</itemPath>
       <itemPath>frmForm1.dfm</itemPath>
       <itemPath>frmForm2.dfm</itemPath>
@@ -115,6 +117,10 @@
       </item>
       <item path="TSize.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="TTextBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TTextBox.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TVisibleObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TVisibleObject.h" ex="false" tool="3" flavor2="0">
@@ -193,6 +199,10 @@
       <item path="TSize.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TSize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TTextBox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TTextBox.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TVisibleObject.cpp" ex="false" tool="1" flavor2="0">
       </item>

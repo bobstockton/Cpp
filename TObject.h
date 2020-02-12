@@ -13,7 +13,7 @@
 
 #ifndef TOBJECT_H
 #define TOBJECT_H
-
+#include <gtkmm.h>
 #include <string>
 
 class TObject {
@@ -26,10 +26,11 @@ public:
  
     std::string getName();
     void        setName( std::string Name );
-    
+    virtual Gtk::Widget         *getGtkWidget();
 private:
     
 protected:
+    
     
     TObject         *mParent;
     TObject         *mChildren;

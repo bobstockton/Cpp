@@ -46,6 +46,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/TObject.o \
 	${OBJECTDIR}/TPosition.o \
 	${OBJECTDIR}/TSize.o \
+	${OBJECTDIR}/TTextBox.o \
 	${OBJECTDIR}/TVisibleObject.o \
 	${OBJECTDIR}/main.o
 
@@ -128,6 +129,11 @@ ${OBJECTDIR}/TSize.o: TSize.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSize.o TSize.cpp
+
+${OBJECTDIR}/TTextBox.o: TTextBox.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I. -I/usr/local/boost_1_72_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TTextBox.o TTextBox.cpp
 
 ${OBJECTDIR}/TVisibleObject.o: TVisibleObject.cpp
 	${MKDIR} -p ${OBJECTDIR}

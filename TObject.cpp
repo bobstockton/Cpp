@@ -28,6 +28,11 @@ std::string TObject::getName()
     return mName;
 }
 
+Gtk::Widget *TObject::getGtkWidget()
+{
+    return NULL;
+}
+
 void TObject::setName(std::string Name )
 {
     mName = Name;

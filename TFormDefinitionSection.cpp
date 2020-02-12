@@ -73,31 +73,43 @@ bool  TFormDefinitionSection::getValue( string token , string &value )
 
 bool    TFormDefinitionSection::getString( string token, string &value )
 {
-    bool ret;
+    bool    ret;
+    string  newValue;
     
-    ret = getValue( token, value );
+    if( getValue( token, newValue ))
+    {
+        value = newValue;
+        return true;
+    }
     
-    return ret;
+    return false;
 }
 
 bool    TFormDefinitionSection::getInt( string token, int &value )
 {
-    bool ret;
+
     string  stringValue;
     
-    ret = getValue( token, stringValue);
-    value = stoi( stringValue );
-    
+    if( getValue( token, stringValue))
+    {
+        value = stoi( stringValue );
+        return true;
+    }
+    return false;    
 }
 bool    TFormDefinitionSection::getBool( string token, bool &value )
 {
     bool ret;
     string  stringValue;
     
-    ret = getValue( token, stringValue );
-    value = ( stringValue == "true" );
+    if( getValue( token, stringValue ) )
+    {
+        value = ( stringValue == "true" );
+        return true;
+    }
     
-    return ret;
+    
+    return false;
 }
     
 

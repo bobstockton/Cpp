@@ -16,8 +16,8 @@ using namespace std;
 
 TButton::TButton(Gtk::Window *window, int left, int top, int width , int height, string caption) 
 {
-    gtkButton  = new Gtk::Button(caption.c_str(), true);
-    gtkButton->set_size_request( width, height );
+    mGtkButton  = new Gtk::Button(caption.c_str(), true);
+    
   
 }
 
@@ -36,8 +36,8 @@ TButton::TButton( TFormDefinitionSection *section, TObject  *parent )
     section->getBool(   "visible",  mVisible );
     section->getString( "caption",  mCaption );
     mParent = parent;
-    gtkButton  = new Gtk::Button(mCaption.c_str(), true);
-    gtkButton->set_size_request( mWidth, mHeight );
+    mGtkButton  = new Gtk::Button(mCaption.c_str(), true);
+    mGtkButton->set_size_request( mWidth, mHeight );
     
     // Attach Event Listeners
 //    if( section->getString( "onclick", functionName ))
@@ -49,23 +49,36 @@ TButton::TButton( TFormDefinitionSection *section, TObject  *parent )
 TButton::~TButton() {
 }
 
+void    TButton::Initialise()
+{
+    setPosition( mLeft, mTop );
+    setSize( mHeight, mWidth );
+}
+
 Gtk::Button *TButton::getGtkButton()
 {
-    return gtkButton;
+    return mGtkButton;
 }
+
 
 void    TButton::setCaption( string caption )
 {
     mCaption = caption;
-    gtkButton->set_label( mCaption.c_str());
+    mGtkButton->set_label( mCaption.c_str());
+
 }
 
-//void    TButton::setOnClick( void (*functionPtr()) )
-//{
-//}
+void    TButton::setPosition( int X, int Y )
+{
+    Gtk::Fixed  *container;
+    
+    container = dynamic_cast<Gtk::Fixed *>(mParent->getGtkWidget()); 
+    container->move( *mGtkButton, X, Y);
+}
+
+void TButton::setSize( int width, int height )
+{
+    mGtkButton->set_size_request(width, height);
+}
 
 
-//void    TButton::OnClick()
-//{
-//    gtkButton->set_label("clicked");
-//}

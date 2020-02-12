@@ -19,4 +19,13 @@
         <taborder>1</taborder>
         <onClick>cmdCancelClick</onClick>
     </object>
+    <object>
+        <name>txtBox</type>
+        <class>TTextBox</class>
+        <top>200</top>
+        <left>100</left>
+        <width>100</width>
+        <height>10</height>
+        <taborder>2</taborder>
+    </object>
 </object>

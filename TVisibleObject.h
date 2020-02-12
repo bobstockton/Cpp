@@ -12,11 +12,16 @@
 #ifndef TVISIBLEOBJECT_H
 #define TVISIBLEOBJECT_H
 #include <gtkmm.h>
+#include <string>
+
+#include <TFormDefinitionSection.h>
 
 #include <TObject.h>
 #include <TPosition.h>
 #include <TFont.h>
 #include <TSize.h>
+
+
 
 class TVisibleObject : public TObject
 {
@@ -25,6 +30,7 @@ public:
     TVisibleObject(const TVisibleObject& orig);
     virtual ~TVisibleObject();    
     virtual void rtti_function() {};
+    
 private:
     
         

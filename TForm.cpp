@@ -155,15 +155,19 @@ void    TForm::createComponent( int section)
     }
     if( value == "TButton" )
     {
-        TButton *button= new TButton( sectionDef, this );
-        
-        
+        TButton *button= new TButton( sectionDef, this );   
         gtk_container_add(GTK_CONTAINER(mFixed->gobj()),  GTK_WIDGET(button->getGtkButton()->gobj()) );
-        
         addComponent( button );
+        button->Initialise();
         
     }
-
+    if( value == "TTextBox" )
+    {
+        TTextBox *textbox = new TTextBox( sectionDef, this );
+        gtk_container_add(GTK_CONTAINER(mFixed->gobj()),  GTK_WIDGET(textbox->getGtkWidget()->gobj()) );
+        addComponent( textbox );
+        textbox->Initialise();
+    }
 }
 
 void TForm::addComponent( TVisibleObject *component )
@@ -181,6 +185,11 @@ TVisibleObject *TForm::getComponent( string name )
         }
     }
     return NULL;
+}
+
+Gtk::Widget  *TForm::getGtkWidget()
+{
+    return mFixed;
 }
 
 
