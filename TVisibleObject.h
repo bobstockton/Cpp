@@ -31,6 +31,10 @@ public:
     virtual ~TVisibleObject();    
     virtual void rtti_function() {};
     
+    bool        getVisible();
+    void        setVisible( bool visible );
+    Gtk::Widget *getWidget();
+    
 private:
     
         
@@ -45,6 +49,8 @@ protected:
     int         mLeft;
     int         mTop;
     int         mWidth;
+    
+    Gtk::Widget *mWidget;
     
    
 

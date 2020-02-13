@@ -13,19 +13,30 @@
         <class>TButton</class>
         <top>100</top>
         <left>100</left>
-        <width>100</width>
-        <height>10</height>
+        <width>300</width>
+        <height>50</height>
         <caption>Cancel</caption>
         <taborder>1</taborder>
         <onClick>cmdCancelClick</onClick>
     </object>
     <object>
+            <name>cmdTestButton</type>
+            <class>TButton</class>
+            <top>160</top>
+            <left>100</left>
+            <width>300</width>
+            <height>50</height>
+            <caption>TestButton</caption>
+            <taborder>2</taborder>
+            <onClick>cmdTestClick</onClick>
+        </object>
+    <object>
         <name>txtBox</type>
         <class>TTextBox</class>
-        <top>200</top>
+        <top>250</top>
         <left>100</left>
         <width>100</width>
-        <height>10</height>
+        <height>50</height>
         <taborder>2</taborder>
     </object>
 </object>

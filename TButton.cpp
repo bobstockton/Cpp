@@ -16,7 +16,7 @@ using namespace std;
 
 TButton::TButton(Gtk::Window *window, int left, int top, int width , int height, string caption) 
 {
-    mGtkButton  = new Gtk::Button(caption.c_str(), true);
+    mWidget  = new Gtk::Button(caption.c_str(), true);
     
   
 }
@@ -36,14 +36,9 @@ TButton::TButton( TFormDefinitionSection *section, TObject  *parent )
     section->getBool(   "visible",  mVisible );
     section->getString( "caption",  mCaption );
     mParent = parent;
-    mGtkButton  = new Gtk::Button(mCaption.c_str(), true);
-    mGtkButton->set_size_request( mWidth, mHeight );
-    
-    // Attach Event Listeners
-//    if( section->getString( "onclick", functionName ))
-//    {
-//        gtkButton->signal_clicked().connect(std::mem_fun(this, &TButton::OnClick));
-//    }
+    mWidget  = new Gtk::Button(mCaption.c_str(), true);
+    mWidget->set_size_request( mWidth, mHeight );
+  
 }
 
 TButton::~TButton() {
@@ -52,19 +47,20 @@ TButton::~TButton() {
 void    TButton::Initialise()
 {
     setPosition( mLeft, mTop );
-    setSize( mHeight, mWidth );
+    setSize( mWidth, mHeight );
 }
 
 Gtk::Button *TButton::getGtkButton()
 {
-    return mGtkButton;
+    return (Gtk::Button *)mWidget;
 }
 
 
 void    TButton::setCaption( string caption )
 {
+    Gtk::Button *button = (Gtk::Button *)mWidget;
     mCaption = caption;
-    mGtkButton->set_label( mCaption.c_str());
+    button->set_label( mCaption.c_str());
 
 }
 
@@ -78,7 +74,8 @@ void    TButton::setPosition( int X, int Y )
 
 void TButton::setSize( int width, int height )
 {
-    mGtkButton->set_size_request(width, height);
+    mWidget->set_size_request(width, height);
 }
+
 
 

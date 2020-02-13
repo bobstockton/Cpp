@@ -199,16 +199,16 @@ void    TForm::Initialise()
      
 }
 
+void    TForm::Close()
+{
+    for( int i= 0 ; i< mComponentCount ; i++ )
+    {
+        delete mComponentArray[i];
+    }
+    
+    delete mWindow;
+    delete mFixed;
+}
 
-//{
-//    TEvent  = new TEvent();
-//    
-//    TEvent->setFunctionName( functionName );
-//    TEvent->setFunctionPointer( functionPtr );
-//    
-//    mEventArray[mEventCount++] = TEvent;
-//    
-//}
-//
 
 

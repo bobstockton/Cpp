@@ -28,6 +28,7 @@ public:
     TForm(const TForm& orig);
     virtual ~TForm();       
     Gtk::Widget     *getGtkWidget() override;
+    void            Close();
     virtual void    Initialise();
     bool            isMainForm();
     bool            LoadForm(  );

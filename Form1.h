@@ -26,6 +26,7 @@ public:
     
     
     TButton     *cmdCancel;
+    TButton     *cmdTestButton;
     TTextBox    *txtBox;
 private:
     
@@ -33,6 +34,7 @@ private:
     
 protected:
     void cmdCancel_OnClick();
+    void cmdTestButton_OnClick();
 
 };
 
