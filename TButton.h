@@ -30,8 +30,7 @@ public:
     void            OnClick();
     
     void            setCaption( string );
-    void            setPosition(int X, int Y );
-    void            setSize( int Width, int Height );
+  
     virtual void    rtti_function(){};
     
     

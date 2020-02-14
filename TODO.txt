@@ -1,0 +1,3 @@
+Change object / component array to use Templates and Lists
+
+Example templates for passing component types around

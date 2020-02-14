@@ -31,6 +31,11 @@ public:
     virtual ~TVisibleObject();    
     virtual void rtti_function() {};
     
+    void        setPosition( int X, int Y );
+    void        setSize( int X, int Y );
+    
+    void        setTooltipText( string text );
+    
     bool        getVisible();
     void        setVisible( bool visible );
     Gtk::Widget *getWidget();
@@ -49,11 +54,11 @@ protected:
     int         mLeft;
     int         mTop;
     int         mWidth;
+    string      mTooltip;
     
     Gtk::Widget *mWidget;
     
-   
-
+ 
 };
 
 #endif /* TVISIBLEOBJECT_H */

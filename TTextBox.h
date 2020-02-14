@@ -24,12 +24,9 @@ public:
     
     void        Initialise();
     
-    Gtk::Widget *getGtkWidget( ) override;
-    
     void        setMaxLength( int length );
-    void        setPosition( int X, int Y );
-    void        setSize( int Hight, int Width );
     void        setText( string Text );
+    void        setText( char* text );
     string      getText();
     
 private:

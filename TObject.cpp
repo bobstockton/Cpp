@@ -10,6 +10,7 @@
 #include "TObject.h"
 
 TObject::TObject() {
+    mName = mClass = "NotSet";
 }
 
 TObject::TObject(const TObject& orig) {

@@ -16,6 +16,7 @@
         <width>300</width>
         <height>50</height>
         <caption>Cancel</caption>
+        <tooltip>Close the Program</tooltip>
         <taborder>1</taborder>
         <onClick>cmdCancelClick</onClick>
     </object>
@@ -27,6 +28,7 @@
             <width>300</width>
             <height>50</height>
             <caption>TestButton</caption>
+            <tooltip>Set Button text</tooltip>
             <taborder>2</taborder>
             <onClick>cmdTestClick</onClick>
         </object>
@@ -37,6 +39,7 @@
         <left>100</left>
         <width>100</width>
         <height>50</height>
+        <tooltip>Why would anyone put a tooltip on a text box?</tooltip>
         <taborder>2</taborder>
     </object>
 </object>

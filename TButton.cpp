@@ -17,8 +17,6 @@ using namespace std;
 TButton::TButton(Gtk::Window *window, int left, int top, int width , int height, string caption) 
 {
     mWidget  = new Gtk::Button(caption.c_str(), true);
-    
-  
 }
 
 TButton::TButton(const TButton& orig) {
@@ -27,12 +25,17 @@ TButton::TButton(const TButton& orig) {
 TButton::TButton( TFormDefinitionSection *section, TObject  *parent ) 
 {
     string  functionName;
+    
+    
+    mVisible = true;
+    mCaption = "NotSet";
   
     section->getString( "name" ,    mName );
     section->getInt(    "top",      mTop);
     section->getInt(    "left",     mLeft);
     section->getInt(    "width",    mWidth );
     section->getInt(    "height",   mHeight );
+    section->getString( "tooltip",  mTooltip );
     section->getBool(   "visible",  mVisible );
     section->getString( "caption",  mCaption );
     mParent = parent;
@@ -48,6 +51,7 @@ void    TButton::Initialise()
 {
     setPosition( mLeft, mTop );
     setSize( mWidth, mHeight );
+    setTooltipText( mTooltip );
 }
 
 Gtk::Button *TButton::getGtkButton()
@@ -64,18 +68,7 @@ void    TButton::setCaption( string caption )
 
 }
 
-void    TButton::setPosition( int X, int Y )
-{
-    Gtk::Fixed  *container;
-    
-    container = dynamic_cast<Gtk::Fixed *>(mParent->getGtkWidget()); 
-    container->move( *mGtkButton, X, Y);
-}
 
-void TButton::setSize( int width, int height )
-{
-    mWidget->set_size_request(width, height);
-}
 
 
 

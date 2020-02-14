@@ -12,8 +12,7 @@
 #include "TTextBox.h"
 
 TTextBox::TTextBox() {
-    mHeight = mWidth = mLeft = mTop = mMaxLength = 10;
-    mVisible = true;
+  
 }
 
 TTextBox::TTextBox(const TTextBox& orig) {
@@ -25,9 +24,6 @@ TTextBox::~TTextBox() {
 TTextBox::TTextBox( TFormDefinitionSection *section, TObject  *parent ) 
 {
     string  functionName;
-    
-    mHeight = mWidth = mLeft = mTop = mMaxLength = 10;
-    mVisible = true;
   
     section->getString( "name" ,    mName );
     section->getInt(    "top",      mTop);
@@ -35,10 +31,11 @@ TTextBox::TTextBox( TFormDefinitionSection *section, TObject  *parent )
     section->getInt(    "width",    mWidth );
     section->getInt(    "height",   mHeight );
     section->getInt(    "maxlen",   mMaxLength );
+    section->getString( "tooltip",  mTooltip );
     section->getBool(   "visible",  mVisible );
 
     mParent = parent;
-    mGtkEntry  = new Gtk::Entry();
+    mWidget  = new Gtk::Entry();
   
 }
 void    TTextBox::Initialise()
@@ -46,43 +43,33 @@ void    TTextBox::Initialise()
     setSize( mHeight, mWidth );
     setPosition( mLeft, mTop );
     setMaxLength( mMaxLength );
+    setTooltipText( mTooltip );
 }
 
-
-Gtk::Widget   *TTextBox::getGtkWidget()
-{
-    return mGtkEntry;
-}
 
 
 void    TTextBox::setMaxLength( int length )
 {
-    mGtkEntry->set_max_length( length );
+    Gtk::Entry *entry = (Gtk::Entry *)mWidget;
+    entry->set_max_length( length );
 }
-
-
-void    TTextBox::setPosition( int X, int Y )
-{
-    Gtk::Fixed  *container;
-    
-    container = dynamic_cast<Gtk::Fixed *>(mParent->getGtkWidget()); 
-    container->move( *mGtkEntry, X, Y );
-}
-
-void    TTextBox::setSize( int height, int width )
-{
-    mWidth = width;
-    mHeight = height;
-    mGtkEntry->set_size_request( width, height );
-}
-
 
 string  TTextBox::getText()
 {
-    return mGtkEntry->get_text();
+    Gtk::Entry *entry = (Gtk::Entry *)mWidget;
+    return entry->get_text();
 }
 
 void    TTextBox::setText( string text )
 {
-    mGtkEntry->set_text( text.c_str());
+    Gtk::Entry *entry = (Gtk::Entry *)mWidget;
+    entry->set_text( text.c_str());
 }
+
+void    TTextBox::setText( char *text )
+{
+    Gtk::Entry *entry = (Gtk::Entry *)mWidget;
+    entry->set_text( text );
+}
+
+

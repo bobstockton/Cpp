@@ -25,6 +25,7 @@ Form1::~Form1()
 void    Form1::Initialise()
 {
     TForm::Initialise();
+    
     cmdCancel = dynamic_cast<TButton *>(getComponent("cmdCancel"));
     cmdCancel->getGtkButton()->signal_clicked().connect(sigc::mem_fun(this, &Form1::cmdCancel_OnClick));
     
@@ -32,6 +33,8 @@ void    Form1::Initialise()
     cmdTestButton->getGtkButton()->signal_clicked().connect(sigc::mem_fun(this, &Form1::cmdTestButton_OnClick));
     
     txtBox = dynamic_cast<TTextBox *>(getComponent("txtBox"));
+    txtBox->setText( typeid( cmdCancel ).name());
+   
     
 }
 

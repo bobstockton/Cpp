@@ -16,14 +16,9 @@ using namespace std;
 
 TForm::TForm() {
     mClass      = "TForm";
-    mHeight     = 10;
-    mWidth      = 10;
-    mTop        = 10;
-    mLeft       = 10;
     mMainForm   = false;
     mFormDefinition = new TFormDefinition();
-    mComponentCount = 0;
-    
+    mComponentCount = 0; 
 }
 
 TForm::TForm(const TForm& orig) {
@@ -156,7 +151,7 @@ void    TForm::createComponent( int section)
     if( value == "TButton" )
     {
         TButton *button= new TButton( sectionDef, this );   
-        gtk_container_add(GTK_CONTAINER(mFixed->gobj()),  GTK_WIDGET(button->getGtkButton()->gobj()) );
+        gtk_container_add(GTK_CONTAINER(mFixed->gobj()),  button->getWidget()->gobj());
         addComponent( button );
         button->Initialise();
         
@@ -164,7 +159,7 @@ void    TForm::createComponent( int section)
     if( value == "TTextBox" )
     {
         TTextBox *textbox = new TTextBox( sectionDef, this );
-        gtk_container_add(GTK_CONTAINER(mFixed->gobj()),  GTK_WIDGET(textbox->getGtkWidget()->gobj()) );
+        gtk_container_add(GTK_CONTAINER(mFixed->gobj()),  textbox->getWidget()->gobj());
         addComponent( textbox );
         textbox->Initialise();
     }
